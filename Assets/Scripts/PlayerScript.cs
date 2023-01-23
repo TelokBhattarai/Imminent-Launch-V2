@@ -4,81 +4,44 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static float speed;
-    public static int lives;
-    public static int coins_collected;
-    public static float timeRemaining = 10;
-    public static bool timerIsRunning = false;
+    public static float timeRemaining = 20;
+    public static float speed = 7;
+    public static int coins = 0;
+    public static int keys = 0;
+    public static int maxHealth = 100;
+    public static int currHealth = 100;
+    public static bool hasPowerArmor = false;
 
-    private void Start()
+
+    public int damagePlayer(int n)
     {
-        lives = 3;
-        speed = 7.5f;
-        coins_collected = 0;
-    }
-
-    private void FixedUpdate()
-    {
-
-        if (timerIsRunning)
+        if (currHealth - n <= 0)
         {
-            if (timeRemaining > 0)
-            {
-
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-
-                changeSpeed(7.5f);
-                Debug.Log("Your Body Begins To Slow...");
-                timeRemaining = 0;
-                timerIsRunning = false;
-            }
-
-
+            Debug.Log("Dead");
+            return 0;
+        }
+        else
+        {
+            currHealth -= n;
+            return currHealth;
         }
     }
-
-    // Helper functions for powerups
-    // Makes code a bit more readable
-
-    public static void addLife()
+    
+    public int healPlayer(int n)
     {
-        lives += 1;
+        currHealth = (currHealth + n)  > maxHealth ? maxHealth : currHealth + n;
+        return currHealth;
     }
 
-    public static void removeLife()
+    private void Update()
     {
-        lives -= 1;
-    }
-
-    public static void addCoin(int amount)
-    {
-        coins_collected += amount;
-    }
-
-    public static void changeSpeed(float speedval)
-    {
-        speed = speedval;
-    }
-    // public static void reverseControls(float )
-
-    // assists with MI trap/Script and MUP powerup
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-
-        if (other.transform.tag == "MI")
+        if (timeRemaining >= 0)
         {
-            Movement.startTimer();
+            timeRemaining -= Time.deltaTime;
         }
-
-        if (other.transform.tag == "MUP")
+        else
         {
-            timerIsRunning = true;
-            changeSpeed(15);
-            Debug.Log("Energy Suddenly Surges Within Your Body!!!");
+            Debug.Log("Time is out!");
         }
     }
-
 }

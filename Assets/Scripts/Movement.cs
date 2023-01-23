@@ -17,9 +17,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        Debug.Log(horizontal);
-        Debug.Log(vertical);
-
+    
 
         if (!timerIsRunning)
         {
