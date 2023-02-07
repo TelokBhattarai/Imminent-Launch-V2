@@ -6,14 +6,14 @@ public class PlayerScript : MonoBehaviour
 {
     public static float timeRemaining = 20;
     public static float speed = 7;
-    public static int coins = 0;
+    public static int coins = 1000;
     public static int keys = 0;
     public static int maxHealth = 100;
     public static int currHealth = 100;
     public static bool hasPowerArmor = false;
 
 
-    public int damagePlayer(int n)
+    public static int damagePlayer(int n)
     {
         if (currHealth - n <= 0)
         {
@@ -31,6 +31,14 @@ public class PlayerScript : MonoBehaviour
     {
         currHealth = (currHealth + n)  > maxHealth ? maxHealth : currHealth + n;
         return currHealth;
+    }
+
+    public static int useCoins(int n)
+    {
+        if (coins - n >= 0)
+            coins -= n;
+
+        return coins;
     }
 
     private void Update()
