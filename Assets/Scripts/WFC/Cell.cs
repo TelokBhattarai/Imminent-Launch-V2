@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
-public class Cell
-    {
+public class Cell : MonoBehaviour
+{
         // Key names for each tile in StandardPalette
         const string blankKey = "blankKey";
         const string upKey = "upKey";

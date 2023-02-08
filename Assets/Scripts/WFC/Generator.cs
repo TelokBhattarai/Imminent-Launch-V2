@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Generator
+public class Generator : MonoBehaviour
     {
         // Key names for each tile in StandardPalette
         const string blankKey = "blankKey";
@@ -125,7 +126,7 @@ public class Generator
             // Pick random cell from list of all that have the lowest entropy value
             if (lowestCells.Count > 0)
             {
-                int randCellIdx = new Random().Next(0, lowestCells.Count);
+                int randCellIdx = new System.Random().Next(0, lowestCells.Count);
                 chosenLowestCell = lowestCells[randCellIdx];
             }
 
@@ -305,7 +306,7 @@ public class Generator
             // SAFEGUARD - Do NOT attempt to collapse already collapsed cell
             if (!cell.collapsed)
             {
-                Random rnd = new Random();
+                System.Random rnd = new System.Random();
                 int numOptions = cell.options.Count;
 
                 if (numOptions >= 1)

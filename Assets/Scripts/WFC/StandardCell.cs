@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 // This represents the definition of each type of "Cell Value" with
 // its valid possible neighbors.  This will be used to build the 
@@ -11,8 +12,8 @@ using System.Threading.Tasks;
 // The Pallette with use a dictionary with the "id" as the key of each
 // neighbor of the StandardCell
 
-    public class StandardCell
-    {
+public class StandardCell : MonoBehaviour
+{
         public List<string> upNeighbors = new List<string>();
         public List<string> rightNeighbors = new List<string>();
         public List<string> downNeighbors = new List<string>();
