@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Generator : MonoBehaviour
     {
@@ -18,6 +19,7 @@ public class Generator : MonoBehaviour
         public int[] gridValues;
 
         Dictionary<string, StandardCell> standardPallette = new Dictionary<string, StandardCell>();
+        Dictionary<string, UnityEngine.Tilemaps.TileBase> tilePair = new Dictionary<string, UnityEngine.Tilemaps.TileBase>();
         string[] tiles = { "blank", " up  ", "right", "down ", "left " };
 
         bool DisplayDebug = false;
