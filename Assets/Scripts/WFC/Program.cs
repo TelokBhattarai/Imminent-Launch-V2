@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-internal class Program : MonoBehaviour
+public class Program : MonoBehaviour
 {
-        static void Main(string[] args)
+        void Start()
         {
             Console.WriteLine("WFC Generator");
             
             Generator gen = new Generator(50, 20);
-            gen.PeformWFC();
+            gen.PerformWFC();
         }
     }

@@ -12,7 +12,7 @@ using UnityEngine;
 // The Pallette with use a dictionary with the "id" as the key of each
 // neighbor of the StandardCell
 
-public class StandardCell : MonoBehaviour
+public class StandardCell
 {
         public List<string> upNeighbors = new List<string>();
         public List<string> rightNeighbors = new List<string>();

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Cell : MonoBehaviour
+public class Cell
 {
         // Key names for each tile in StandardPalette
         const string blankKey = "blankKey";
