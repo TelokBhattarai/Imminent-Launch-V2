@@ -171,11 +171,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bruhTilemap: {fileID: 908995907}
   bruhTiles: []
-  blankImg: {fileID: 11400000, guid: 51b474554be714ecaa6552086a68b275, type: 2}
-  upImg: {fileID: 11400000, guid: 3d8ad5589fbb64cfc9707ada0466b916, type: 2}
-  rightImg: {fileID: 11400000, guid: f6a48a17b641b49ee9e12e0330a22d76, type: 2}
-  downImg: {fileID: 11400000, guid: 1905450acc65e4270a95906dc8a462cb, type: 2}
-  leftImg: {fileID: 11400000, guid: 9c34f47a50ea641e7bbb7ec2ba37f633, type: 2}
+  blankImg: {fileID: 11400000, guid: b047fde14a73d42e799666c669799b66, type: 2}
+  upImg: {fileID: 11400000, guid: 3a8cee3718a794aaaa2779c717dc7868, type: 2}
+  rightImg: {fileID: 11400000, guid: c5e0622cd8db343efb5443a3b2487e42, type: 2}
+  downImg: {fileID: 11400000, guid: 58022353c053040cab640c43ce4a36e1, type: 2}
+  leftImg: {fileID: 11400000, guid: f15c98817fd6e46c6b9461e090a9ddc7, type: 2}
 --- !u!114 &130859097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,11 +191,11 @@ MonoBehaviour:
   bruhTilemap: {fileID: 908995907}
   bruhTiles: []
   pos: {x: 0, y: 0, z: 0}
-  blankImg: {fileID: 11400000, guid: 51b474554be714ecaa6552086a68b275, type: 2}
+  blankImg: {fileID: 11400000, guid: dd13bbdfc3c284f5eac52fb437d3abe7, type: 2}
   upImg: {fileID: 11400000, guid: 3d8ad5589fbb64cfc9707ada0466b916, type: 2}
   rightImg: {fileID: 11400000, guid: f6a48a17b641b49ee9e12e0330a22d76, type: 2}
   downImg: {fileID: 11400000, guid: 1905450acc65e4270a95906dc8a462cb, type: 2}
-  leftImg: {fileID: 11400000, guid: 9c34f47a50ea641e7bbb7ec2ba37f633, type: 2}
+  leftImg: {fileID: 11400000, guid: 3501e822d230f426b84f58f3e92563e7, type: 2}
 --- !u!1 &212629965
 GameObject:
   m_ObjectHideFlags: 0
