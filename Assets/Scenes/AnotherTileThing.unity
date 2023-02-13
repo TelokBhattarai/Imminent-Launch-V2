@@ -164,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130859094}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eff68cba0f7a541de922eb65891a4eb6, type: 3}
   m_Name: 
@@ -183,13 +183,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130859094}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: beffdebbc1f6b4fc0a511b2f504aa888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bruhTilemap: {fileID: 908995907}
   bruhTiles: []
+  pos: {x: 0, y: 0, z: 0}
   blankImg: {fileID: 11400000, guid: 51b474554be714ecaa6552086a68b275, type: 2}
   upImg: {fileID: 11400000, guid: 3d8ad5589fbb64cfc9707ada0466b916, type: 2}
   rightImg: {fileID: 11400000, guid: f6a48a17b641b49ee9e12e0330a22d76, type: 2}
