@@ -4,8 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Generator 
+public class Generator
 {
+
+
+    public Tilemap realTilemap;
+    public List<Tile> realTiles;
+    private Camera cam;
     // Key names for each tile in StandardPalette
     const string blankKey = "blankKey";
     const string upKey = "upKey";
@@ -13,8 +18,10 @@ public class Generator
     const string downKey = "downKey";
     const string leftKey = "leftKey";
 
-    public int world_width = 10;
-    public int world_heigth = 10;
+    public static int world_width = 10;
+    public static int world_heigth = 10;
+
+    public string[,] stringMap = new string[0, 0];
 
     public Cell[,] grid;
     public int[] gridValues;
@@ -37,6 +44,8 @@ public class Generator
     {
         world_width = xDimension;
         world_heigth = yDimension;
+        stringMap = new string[world_width, world_heigth];
+        grid = new Cell[world_width, world_heigth];
     }
 
     private void SetupStandardPallette()
@@ -92,7 +101,7 @@ public class Generator
 
     private void SetupInitialGrid()
     {
-        grid = new Cell[world_width, world_heigth];
+        // grid = new Cell[world_width, world_heigth];
 
         for (int i = 0; i < world_width; i++)
         {
@@ -260,6 +269,7 @@ public class Generator
 
     public void DrawGrid()
     {
+        // realTilemap.ClearAllTiles();
         for (int j = 0; j < world_heigth; j++)
         {
             String output = "";
@@ -279,27 +289,28 @@ public class Generator
                     if (opt == "u")
                     {
                         txt = "┴";
-                        tmap.SetTile(new Vector3Int(i, j), tilePair["upKey"]);
+                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["upKey"]);
                     }
                     else if (opt == "r")
                     {
                         txt = "├";
-                        tmap.SetTile(new Vector3Int(i, j), tilePair["rightKey"]);
+                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["rightKey"]);
                     }
                     else if (opt == "d")
                     {
                         txt = "┬";
-                        tmap.SetTile(new Vector3Int(i, j), tilePair["downKey"]);
+                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["downKey"]);
                     }
                     else
                     {
                         txt = "┤";
-                        tmap.SetTile(new Vector3Int(i, j), tilePair["leftKey"]);
+                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["leftKey"]);
                     }
 
                     output += txt;
-
+                    stringMap[i, j] = txt;
                 }
+                
                 else
                 {
                     output += "(";
