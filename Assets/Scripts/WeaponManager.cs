@@ -14,28 +14,35 @@ public class WeaponManager : MonoBehaviour
     public static int[] crossBowUpgradeTree = { 10, 20, 30 };
     public static int[] armorUpgradeTree = { 10, 20, 30 };
 
-    public static void upgrade(string item)
+    public static void upgrade(string item, bool free = false)
     {
         switch (item)
         {
             case "sword":
-                upgradable(ref SwordLevel, swordUpgradeCost);
+                upgradable(ref SwordLevel, swordUpgradeCost, free);
                 break;
             case "longbow":
-                upgradable(ref LongBowLevel, longBowUpgradeTree);
+                upgradable(ref LongBowLevel, longBowUpgradeTree, free);
                 break;
             case "crossbow":
-                upgradable(ref CrossBowLevel, crossBowUpgradeTree);
+                upgradable(ref CrossBowLevel, crossBowUpgradeTree, free);
                 break;
             case "armor":
-                upgradable(ref ArmorLevel, armorUpgradeTree);
+                upgradable(ref ArmorLevel, armorUpgradeTree, free);
                 break;
 
         }
     }
 
-    private static void upgradable(ref int level, int[] costTree)
+    private static void upgradable(ref int level, int[] costTree, bool free)
     {
+        if (free)
+        {
+            level++;
+            return;
+        }
+
+
         if (PlayerScript.coins >= costTree[level] && level < swordUpgradeCost.Length)
         {
             PlayerScript.useCoins(costTree[level]);
@@ -43,7 +50,6 @@ public class WeaponManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("Not enough coins!");
     }
 
 }
