@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class WFCAgainAgain : MonoBehaviour
+public class updatedWFCRunner : MonoBehaviour
 {
-    public Generator gen = new Generator(50, 20);
+    public eigeneGenerator gen = new eigeneGenerator(50, 20);
     public Tilemap bruhTilemap;
     public List<Tile> bruhTiles = new List<Tile>();
     public Tile blankImg;
-    public Tile upImg;
-    public Tile rightImg;
-    public Tile downImg;
-    public Tile leftImg;
+    public Tile roomImg;
+    public Tile vertImg;
+    public Tile horizImg;
+    public Tile urcImg;
+    public Tile ulcImg;
+    public Tile brcImg;
+    public Tile blcImg;
     // Start is called before the first frame update
     void Start()
     {
         bruhTiles.Add(blankImg);
-        bruhTiles.Add(upImg);
-        bruhTiles.Add(rightImg);
-        bruhTiles.Add(downImg);
-        bruhTiles.Add(leftImg);
+        bruhTiles.Add(roomImg);
+        bruhTiles.Add(vertImg);
+        bruhTiles.Add(horizImg);
+        bruhTiles.Add(urcImg);
+        bruhTiles.Add(ulcImg);
+        bruhTiles.Add(brcImg);
+        bruhTiles.Add(blcImg);
         gen.PerformWFC();
         Setup();
     }
@@ -28,14 +34,14 @@ public class WFCAgainAgain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void Setup()
     {
         bruhTilemap.ClearAllTiles();
-        for (int x = 0; x < Generator.world_heigth; x++)
+        for (int x = 0; x < 10; x++)
         {
-            for (int y = 0; y < Generator.world_width; y++)
+            for (int y = 0; y < 10; y++)
             {
                 // int rand = Random.Range(0, bruhTiles.Count);
                 Vector3Int pos = new Vector3Int(x, y, -10);

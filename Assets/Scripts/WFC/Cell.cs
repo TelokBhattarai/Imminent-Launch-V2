@@ -8,12 +8,12 @@ using UnityEngine;
 public class Cell
 {
         // Key names for each tile in StandardPalette
+        //
         const string blankKey = "blankKey";
         const string upKey = "upKey";
         const string rightKey = "rightKey";
-        const string downKey = "downKey";
+        const string downKey = "dowbKey";
         const string leftKey = "leftKey";
-        const string failedKey = "failedKey";
 
         public int x = -1;
         public int y = -1;
