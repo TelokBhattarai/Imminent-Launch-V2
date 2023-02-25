@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 130859095}
   - component: {fileID: 130859096}
   - component: {fileID: 130859097}
+  - component: {fileID: 130859098}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130859094}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eff68cba0f7a541de922eb65891a4eb6, type: 3}
   m_Name: 
@@ -196,6 +197,31 @@ MonoBehaviour:
   rightImg: {fileID: 11400000, guid: f6a48a17b641b49ee9e12e0330a22d76, type: 2}
   downImg: {fileID: 11400000, guid: 1905450acc65e4270a95906dc8a462cb, type: 2}
   leftImg: {fileID: 11400000, guid: 3501e822d230f426b84f58f3e92563e7, type: 2}
+--- !u!114 &130859098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130859094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52432845be0644362a47fea04f763ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bruhTilemap: {fileID: 908995907}
+  bruhTiles: []
+  t: {fileID: 11400000, guid: 547e4205f8b8640aeb28c862f3f16670, type: 2}
+  b: {fileID: 11400000, guid: 94459369989314f518d2d49e6b7e9514, type: 2}
+  vh: {fileID: 11400000, guid: 79d367a82e46a4c8aa8a93c4825bc847, type: 2}
+  hh: {fileID: 11400000, guid: 8db135ba1463b4a809d7adef670a89f4, type: 2}
+  tr: {fileID: 11400000, guid: cf4b7a1976470477597d731a1b52c701, type: 2}
+  tl: {fileID: 11400000, guid: 55df96ce689e04b7582b6c986854152e, type: 2}
+  br: {fileID: 11400000, guid: aec2e0a15a19e48269385bfe914ea55e, type: 2}
+  bl: {fileID: 11400000, guid: f47965ba084b04f2d94990f1b0416283, type: 2}
+  l: {fileID: 11400000, guid: 680382adad47b4cf989a955aed67beb7, type: 2}
+  r: {fileID: 11400000, guid: 6bc54854596e34c49b58b576785fa2c9, type: 2}
+  g: {fileID: 11400000, guid: b047fde14a73d42e799666c669799b66, type: 2}
 --- !u!1 &212629965
 GameObject:
   m_ObjectHideFlags: 0

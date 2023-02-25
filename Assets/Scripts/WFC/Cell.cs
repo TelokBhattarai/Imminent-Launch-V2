@@ -12,7 +12,7 @@ public class Cell
         const string blankKey = "blankKey";
         const string upKey = "upKey";
         const string rightKey = "rightKey";
-        const string downKey = "dowbKey";
+        const string downKey = "downKey";
         const string leftKey = "leftKey";
 
         public int x = -1;
