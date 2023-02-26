@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     public float time;
 
+    public string type;
+
     public int damage;
 
     // Update is called once per frame
@@ -23,6 +25,23 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision);
+
+        if (!collision.gameObject.CompareTag("Enemy"))
+            return;
+
+        EnemyScript enemy = collision.gameObject.GetComponentInChildren<EnemyScript>();
+
+
+        if(type == "long")
+        {
+            enemy.takeDamage(damage * WeaponManager.LongBowLevel);
+        }
+        else
+            enemy.takeDamage(damage * WeaponManager.CrossBowLevel);
+
+        Debug.Log(enemy.health);
+
         Destroy(gameObject);
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public static int SwordLevel = 0;
-    public static int ArmorLevel = 0;
-    public static int CrossBowLevel = 0;
-    public static int LongBowLevel = 0;
+    public static int SwordLevel = 1;
+    public static int ArmorLevel = 1;
+    public static int CrossBowLevel = 1;
+    public static int LongBowLevel = 1;
 
     public static int[] swordUpgradeCost = { 10, 20, 30 };
     public static int[] longBowUpgradeTree = { 10, 20, 30 };
@@ -43,7 +43,7 @@ public class WeaponManager : MonoBehaviour
         }
 
 
-        if (PlayerScript.coins >= costTree[level] && level < swordUpgradeCost.Length)
+        if (PlayerScript.coins >= costTree[level-1] && level-1 < swordUpgradeCost.Length)
         {
             PlayerScript.useCoins(costTree[level]);
             level++;

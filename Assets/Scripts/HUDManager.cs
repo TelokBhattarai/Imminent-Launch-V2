@@ -23,13 +23,12 @@ public class HUDManager : MonoBehaviour
     void Update()
     {
         health.text = "Health: " + PlayerScript.currHealth.ToString();
-        coins.text = "Coins: " + PlayerScript.coins.ToString();
-        key.text = "Keys: " + PlayerScript.keys.ToString();
-        timer.text = "Timer: " +PlayerScript.timeRemaining.ToString("0");
-        megaArmor.text = "Mega Armor: " + PlayerScript.hasPowerArmor.ToString();
+        coins.text = " " + PlayerScript.coins.ToString();
+        key.text = " " + PlayerScript.keys.ToString();
+        timer.text = " " +PlayerScript.timeRemaining.ToString("0");
         longBow.text = "LongBow: " + WeaponManager.LongBowLevel;
         sword.text = "Sword: " + WeaponManager.SwordLevel;
-        crossBow.text = "LongBow: " + WeaponManager.CrossBowLevel;
+        crossBow.text = "Crossbow: " + WeaponManager.CrossBowLevel;
 
     }
 }

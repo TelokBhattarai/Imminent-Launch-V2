@@ -171,11 +171,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bruhTilemap: {fileID: 908995907}
   bruhTiles: []
-  blankImg: {fileID: 11400000, guid: b047fde14a73d42e799666c669799b66, type: 2}
-  upImg: {fileID: 11400000, guid: 3a8cee3718a794aaaa2779c717dc7868, type: 2}
-  rightImg: {fileID: 11400000, guid: c5e0622cd8db343efb5443a3b2487e42, type: 2}
-  downImg: {fileID: 11400000, guid: 58022353c053040cab640c43ce4a36e1, type: 2}
-  leftImg: {fileID: 11400000, guid: f15c98817fd6e46c6b9461e090a9ddc7, type: 2}
+  t: {fileID: 11400000, guid: a9950fcd747524e8ab8781752daf11fd, type: 2}
+  b: {fileID: 11400000, guid: 490fb0f0a96094a5c8b52b852d8d1fe6, type: 2}
+  vh: {fileID: 0}
+  hh: {fileID: 0}
+  tr: {fileID: 0}
+  tl: {fileID: 0}
+  br: {fileID: 0}
+  bl: {fileID: 0}
+  l: {fileID: 0}
+  r: {fileID: 0}
+  g: {fileID: 0}
 --- !u!114 &130859097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +243,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212629965}
   m_Enabled: 1
-  m_CellSize: {x: 16, y: 16, z: 0}
+  m_CellSize: {x: 14, y: 14, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -372,6 +378,7 @@ GameObject:
   - component: {fileID: 2107953258}
   - component: {fileID: 2107953257}
   - component: {fileID: 2107953256}
+  - component: {fileID: 2107953259}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -445,3 +452,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2107953259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107953255}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16acde11b93f2408bb42eb9cc550fcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

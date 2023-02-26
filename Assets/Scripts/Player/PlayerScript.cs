@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static float timeRemaining = 20;
+    public static float timeRemaining = 3000;
     public static float speed = 7;
     public static int coins = 1000;
     public static int keys = 0;
@@ -51,5 +51,9 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("Time is out!");
         }
+
+
+        if (hasPowerArmor && currHealth <= 100)
+            hasPowerArmor = false;
     }
 }

@@ -7,7 +7,6 @@ using UnityEngine.Tilemaps;
 public class Generator
 {
 
-
     public Tilemap realTilemap;
     public List<Tile> realTiles;
     private Camera cam;
@@ -17,6 +16,23 @@ public class Generator
     const string rightKey = "rightKey";
     const string downKey = "downKey";
     const string leftKey = "leftKey";
+
+    /// <summary>
+    /// NEw Tile set
+    /// </summary>
+
+    const string t = "top";
+    const string b = "bottom";
+    const string vh = "vertical";
+    const string hh = "horizontal";
+    const string tr = "topRight";
+    const string tl = "topLeft";
+    const string br = "bottomRight";
+    const string bl = "bottomLeft";
+    const string l = "left";
+    const string r = "right";
+    const string g = "ground";
+
 
     public static int world_width = 10;
     public static int world_heigth = 10;
@@ -36,7 +52,7 @@ public class Generator
 
     Dictionary<string, StandardCell> standardPallette = new Dictionary<string, StandardCell>();
     Dictionary<string, UnityEngine.Tilemaps.Tile> tilePair = new Dictionary<string, UnityEngine.Tilemaps.Tile>();
-    string[] tiles = { "blank", " up  ", "right", "down ", "left " };
+    string[] tiles = { t, b, vh, hh, tl, tr, bl, br, l, r, g };
 
     bool DisplayDebug = false;
 
@@ -48,55 +64,126 @@ public class Generator
         grid = new Cell[world_width, world_heigth];
     }
 
+   
+
     private void SetupStandardPallette()
     {
-        StandardCell blankSC = new StandardCell(blankKey);
-        StandardCell upSC = new StandardCell(upKey);
-        StandardCell rightSC = new StandardCell(rightKey);
-        StandardCell downSC = new StandardCell(downKey);
-        StandardCell leftSC = new StandardCell(leftKey);
+       
 
-        // Blank - Neighbors
-        blankSC.upNeighbors = new List<string>() { blankKey, upKey };
-        blankSC.rightNeighbors = new List<string>() { blankKey, rightKey };
-        blankSC.downNeighbors = new List<string>() { blankKey, downKey };
-        blankSC.leftNeighbors = new List<string>() { blankKey, leftKey };
+        StandardCell topSc = new StandardCell(t);
+        StandardCell bottomSc = new StandardCell(b);
+        StandardCell verticialSc = new StandardCell(vh);
+        StandardCell horizontalSc = new StandardCell(hh);
+        StandardCell topLeftSc = new StandardCell(tl);
+        StandardCell topRightSc = new StandardCell(tr);
+        StandardCell bottomLeftSc = new StandardCell(bl);
+        StandardCell bottomRightSc = new StandardCell(br);
+        StandardCell leftSc = new StandardCell(l);
+        StandardCell rightSc = new StandardCell(r);
+        StandardCell groundSc = new StandardCell(g);
 
-        // Up - Neighbors
-        upSC.upNeighbors = new List<string>() { rightKey, leftKey, downKey };
-        upSC.rightNeighbors = new List<string>() { leftKey, upKey, downKey };
-        upSC.downNeighbors = new List<string>() { blankKey, downKey };
-        upSC.leftNeighbors = new List<string>() { rightKey, upKey, downKey };
+        // Ground - Neighbors
+        groundSc.upNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };
+        groundSc.rightNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r,g  };
+        groundSc.downNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };
+        groundSc.leftNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };
 
-        // Right - Neighbors
-        rightSC.upNeighbors = new List<string>() { rightKey, leftKey, downKey };
-        rightSC.rightNeighbors = new List<string>() { leftKey, upKey, downKey };
-        rightSC.downNeighbors = new List<string>() { rightKey, leftKey, upKey };
-        rightSC.leftNeighbors = new List<string>() { blankKey, leftKey };
+        // Top - Neighbors
+        // done
 
-        // Down - Neighbors
-        downSC.upNeighbors = new List<string>() { blankKey, upKey };
-        downSC.rightNeighbors = new List<string>() { leftKey, upKey, downKey };
-        downSC.downNeighbors = new List<string>() { rightKey, leftKey, upKey };
-        downSC.leftNeighbors = new List<string>() { rightKey, upKey, downKey };
+        topSc.upNeighbors = new List<string>() { g };
+        topSc.rightNeighbors = new List<string>() { g };
+        topSc.downNeighbors = new List<string>() { vh, b, bl, br };
+        topSc.leftNeighbors = new List<string>() { g };
 
-        // Left - Neighbors
-        leftSC.upNeighbors = new List<string>() { rightKey, leftKey, downKey };
-        leftSC.rightNeighbors = new List<string>() { blankKey, rightKey };
-        leftSC.downNeighbors = new List<string>() { rightKey, leftKey, upKey };
-        leftSC.leftNeighbors = new List<string>() { upKey, downKey, rightKey };
+        // Bottom - Neighbors
+        // done
 
-        // Add all the created cells to the standard pallette
-        standardPallette.Add(blankKey, blankSC);
-        tilePair.Add(blankKey, blankImg);
-        standardPallette.Add(upKey, upSC);
-        tilePair.Add(upKey, upImg);
-        standardPallette.Add(rightKey, rightSC);
-        tilePair.Add(rightKey, rightImg);
-        standardPallette.Add(downKey, downSC);
-        tilePair.Add(downKey, downImg);
-        standardPallette.Add(leftKey, leftSC);
-        tilePair.Add(leftKey, leftImg);
+        bottomSc.upNeighbors = new List<string>() { t, vh, tr, tl };
+        bottomSc.rightNeighbors = new List<string>() { g };
+        bottomSc.downNeighbors = new List<string>() { g };
+        bottomSc.leftNeighbors = new List<string>() { g };
+
+
+        // Verticial - Neighbors
+        // done
+
+        verticialSc.upNeighbors = new List<string>() { t, tr, tl, vh };
+        verticialSc.rightNeighbors = new List<string>() { g };
+        verticialSc.downNeighbors = new List<string>() { b, bl, br, vh };
+        verticialSc.leftNeighbors = new List<string>() { g };
+
+
+        // Horizontal - Neighbors
+        // done
+
+        horizontalSc.upNeighbors = new List<string>() { g };
+        horizontalSc.rightNeighbors = new List<string>() { br,tr, r, hh };
+        horizontalSc.downNeighbors = new List<string>() { g };
+        horizontalSc.leftNeighbors = new List<string>() { l, bl, tl, hh };
+
+
+        // TopLeft - Neighbors
+        // done
+
+        topLeftSc.upNeighbors = new List<string>() { g };
+        topLeftSc.rightNeighbors = new List<string>() { hh, r, tr };
+        topLeftSc.downNeighbors = new List<string>() { b, bl, vh };
+        topLeftSc.leftNeighbors = new List<string>() { g };
+
+        // Top Right
+        // done
+
+        topRightSc.upNeighbors = new List<string>() { g };
+        topRightSc.rightNeighbors = new List<string>() { g };
+        topRightSc.downNeighbors = new List<string>() { br, b, vh};
+        topRightSc.leftNeighbors = new List<string>() { hh, l, tl };
+
+        // Bottom Left
+        // done
+
+        bottomLeftSc.upNeighbors = new List<string>() { t, tl, vh};
+        bottomLeftSc.rightNeighbors = new List<string>() { hh, br, r };
+        bottomLeftSc.downNeighbors = new List<string>() { g };
+        bottomLeftSc.leftNeighbors = new List<string>() { g };
+
+        // Bottom Right
+        // done
+
+        bottomRightSc.upNeighbors = new List<string>() { vh, tr, t };
+        bottomRightSc.rightNeighbors = new List<string>() { g };
+        bottomRightSc.downNeighbors = new List<string>() { g };
+        bottomRightSc.leftNeighbors = new List<string>() { hh, l, bl };
+
+        // Left
+        // done
+
+        leftSc.upNeighbors = new List<string>() { g };
+        leftSc.rightNeighbors = new List<string>() { hh, r, br, tr };
+        leftSc.downNeighbors = new List<string>() { g };
+        leftSc.leftNeighbors = new List<string>() { g };
+
+        // Right
+        // done 
+
+        rightSc.upNeighbors = new List<string>() { g };
+        rightSc.rightNeighbors = new List<string>() { g };
+        rightSc.downNeighbors = new List<string>() { g };
+        rightSc.leftNeighbors = new List<string>() { hh, bl, tl, l };
+
+
+
+        standardPallette.Add(t, topSc);
+        standardPallette.Add(b, bottomSc);
+        standardPallette.Add(vh, verticialSc);
+        standardPallette.Add(hh, horizontalSc);
+        standardPallette.Add(tl, topLeftSc);
+        standardPallette.Add(tr, topRightSc);
+        standardPallette.Add(bl, bottomLeftSc);
+        standardPallette.Add(br, bottomRightSc);
+        standardPallette.Add(l, leftSc);
+        standardPallette.Add(r, rightSc);
+        standardPallette.Add(g, groundSc);
     }
 
     private void SetupInitialGrid()
@@ -244,21 +331,21 @@ public class Generator
     public void DumpStackNames(Stack<Cell> stack)
     {
         // A stack can be enumerated without disturbing its contents.
-        Console.WriteLine(" ");
-        Console.WriteLine("-----------------");
-        Console.WriteLine(" Current Stack ");
-        Console.WriteLine("-----------------");
+        Debug.Log(" ");
+        Debug.Log("-----------------");
+        Debug.Log(" Current Stack ");
+        Debug.Log("-----------------");
         foreach (Cell cell in stack)
         {
-            Console.WriteLine(DumpCellOptions(cell.options));
+            Debug.Log(DumpCellOptions(cell.options));
         }
-        Console.WriteLine(" ");
-        Console.WriteLine(" ");
+        Debug.Log("-----------------");
+        Debug.Log(" ");
     }
 
     public string DumpCellOptions(List<string> options)
     {
-        string results = "";
+        string results = "-";
         foreach (string opt in options)
         {
             results += opt + "-";
@@ -269,10 +356,10 @@ public class Generator
 
     public void DrawGrid()
     {
+        String output = "";
         // realTilemap.ClearAllTiles();
         for (int j = 0; j < world_heigth; j++)
         {
-            String output = "";
             for (int i = 0; i < world_width; i++)
             {
                 ///////////////////////////////////////////////////////////////////////////////
@@ -284,33 +371,14 @@ public class Generator
                 {
                     //int index = cell.options[0];
                     //output += tiles[index];
-                    string opt = (cell.options[0]).Substring(0, 1);
-                    string txt = "";
-                    if (opt == "u")
-                    {
-                        txt = "┴";
-                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["upKey"]);
-                    }
-                    else if (opt == "r")
-                    {
-                        txt = "├";
-                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["rightKey"]);
-                    }
-                    else if (opt == "d")
-                    {
-                        txt = "┬";
-                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["downKey"]);
-                    }
-                    else
-                    {
-                        txt = "┤";
-                        // tmap.SetTile(new Vector3Int(i, j, -10), tilePair["leftKey"]);
-                    }
+                    string opt = (cell.options[0]) + "\t";
+                    string txt = opt;
+                  
 
                     output += txt;
-                    stringMap[i, j] = txt;
+                    stringMap[i, j] = (cell.options[0]);
                 }
-                
+
                 else
                 {
                     output += "(";
@@ -328,8 +396,12 @@ public class Generator
 
             }
 
-            System.Console.WriteLine(output);
+            output += "\n";
+
         }
+
+        Debug.Log(output);
+
     }
 
 
@@ -360,7 +432,7 @@ public class Generator
             else  // ???  I think this represents a Failed situation -- defaulting to blank spot
                   //      I am not sure how better to address this 
             {
-                collapsedVal = blankKey;
+                collapsedVal = g;
             }
 
 
@@ -550,10 +622,10 @@ public class Generator
 
         if (DisplayDebug)
         {
-            System.Console.WriteLine("--------------");
-            System.Console.WriteLine("Initial Grid");
-            System.Console.WriteLine("--------------");
-            System.Console.WriteLine("");
+            Debug.Log("--------------");
+            Debug.Log("Initial Grid");
+            Debug.Log("--------------");
+            Debug.Log("");
             DrawGrid();
         }
 
@@ -563,12 +635,12 @@ public class Generator
         {
             if (DisplayDebug)
             {
-                System.Console.WriteLine("");
-                System.Console.WriteLine("");
-                System.Console.WriteLine("===============");
-                System.Console.WriteLine(" Loop " + lp++);
-                System.Console.WriteLine("===============");
-                System.Console.WriteLine("");
+                Debug.Log("");
+                Debug.Log("");
+                Debug.Log("===============");
+                Debug.Log(" Loop " + lp++);
+                Debug.Log("===============");
+                Debug.Log("");
             }
 
             Cell cellToCollapse = FindCellLowestEntropy(grid);
@@ -581,15 +653,15 @@ public class Generator
                 if (DisplayDebug)
                 {
                     string msg = string.Format(" Collapse: {0} : {1}", cellToCollapse.x, cellToCollapse.y);
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("--------------");
-                    System.Console.WriteLine(msg);
-                    System.Console.WriteLine("--------------");
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("--------------");
-                    System.Console.WriteLine("After Collapse");
-                    System.Console.WriteLine("--------------");
+                    Debug.Log("");
+                    Debug.Log("");
+                    Debug.Log("--------------");
+                    Debug.Log(msg);
+                    Debug.Log("--------------");
+                    Debug.Log("");
+                    Debug.Log("--------------");
+                    Debug.Log("After Collapse");
+                    Debug.Log("--------------");
                     DrawGrid();
                 }
 
@@ -598,11 +670,11 @@ public class Generator
 
                 if (DisplayDebug)
                 {
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("----------------");
-                    System.Console.WriteLine("After Propagate");
-                    System.Console.WriteLine("----------------");
+                    Debug.Log("");
+                    Debug.Log("");
+                    Debug.Log("----------------");
+                    Debug.Log("After Propagate");
+                    Debug.Log("----------------");
                     DrawGrid();
                 }
             }

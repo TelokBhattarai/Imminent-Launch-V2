@@ -5,9 +5,9 @@ public class Program : MonoBehaviour
 {
         void Start()
         {
-            Console.WriteLine("WFC Generator");
+            Debug.Log("WFC Generator");
             
-            Generator gen = new Generator(50, 20);
+            Generator gen = new Generator(10, 10);
             gen.PerformWFC();
         }
     }

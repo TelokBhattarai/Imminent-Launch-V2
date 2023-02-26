@@ -5,31 +5,41 @@ using UnityEngine.Tilemaps;
 
 public class WFCAgainAgain : MonoBehaviour
 {
-    public Generator gen = new Generator(50, 20);
+    public Generator gen = new Generator(100, 20);
     public Tilemap bruhTilemap;
     public List<Tile> bruhTiles = new List<Tile>();
-    public Tile blankImg;
-    public Tile upImg;
-    public Tile rightImg;
-    public Tile downImg;
-    public Tile leftImg;
+    public Tile t;
+    public Tile b;
+    public Tile vh;
+    public Tile hh;
+    public Tile tr;
+    public Tile tl;
+    public Tile br;
+    public Tile bl;
+    public Tile l;
+    public Tile r;
+    public Tile g;
     // Start is called before the first frame update
     void Start()
     {
-        bruhTiles.Add(blankImg);
-        bruhTiles.Add(upImg);
-        bruhTiles.Add(rightImg);
-        bruhTiles.Add(downImg);
-        bruhTiles.Add(leftImg);
+        bruhTiles.Add(t);
+        bruhTiles.Add(b);
+        bruhTiles.Add(vh);
+        bruhTiles.Add(hh);
+        bruhTiles.Add(tl);
+        bruhTiles.Add(br);
+        bruhTiles.Add(bl);
+        bruhTiles.Add(l);
+        bruhTiles.Add(r);
+        bruhTiles.Add(g);
+
         gen.PerformWFC();
         Setup();
+
+        bruhTilemap.SetTile(new Vector3Int(0,0,-10), bruhTiles[0]);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void Setup()
     {
         bruhTilemap.ClearAllTiles();
@@ -39,26 +49,61 @@ public class WFCAgainAgain : MonoBehaviour
             {
                 // int rand = Random.Range(0, bruhTiles.Count);
                 Vector3Int pos = new Vector3Int(x, y, -10);
-                if (gen.stringMap[y, x] == "┴")
+                Debug.Log(gen.stringMap[y, x]);
+
+                
+                if (gen.stringMap[y, x] == "top")
                 {
+                    Debug.Log("valid top");
+                    bruhTilemap.SetTile(pos, bruhTiles[0]);
+                }
+
+                else if (gen.stringMap[y, x] == "bottom")
+                {
+                    Debug.Log("valid top");
                     bruhTilemap.SetTile(pos, bruhTiles[1]);
                 }
-                else if (gen.stringMap[y, x] == "├")
+
+                /*
+
+                else if (gen.stringMap[x, y] == "vertical")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[2]);
                 }
-                else if (gen.stringMap[y, x] == "┬")
+                else if (gen.stringMap[x, y] == "horizontal")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[3]);
                 }
-                else if (gen.stringMap[y, x] == "┤")
+                else if (gen.stringMap[x, y] == "topRight")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[4]);
                 }
+                else if (gen.stringMap[x, y] == "topLeft")
+                {
+                    bruhTilemap.SetTile(pos, bruhTiles[5]);
+                }
+                else if (gen.stringMap[x, y] == "bottomRight")
+                {
+                    bruhTilemap.SetTile(pos, bruhTiles[6]);
+                }
+                else if (gen.stringMap[x, y] == "bottomLeft")
+                {
+                    bruhTilemap.SetTile(pos, bruhTiles[7]);
+                }
+                else if (gen.stringMap[x, y] == "left")
+                {
+                    bruhTilemap.SetTile(pos, bruhTiles[8]);
+                }
+                else if (gen.stringMap[x, y] == "right")
+                {
+                    bruhTilemap.SetTile(pos, bruhTiles[9]);
+                }
                 else
                 {
-                    bruhTilemap.SetTile(pos, bruhTiles[0]);
+                    bruhTilemap.SetTile(pos, bruhTiles[10]);
                 }
+
+                */
             }
         }
 
