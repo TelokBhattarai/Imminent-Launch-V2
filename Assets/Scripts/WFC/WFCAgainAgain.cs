@@ -43,9 +43,9 @@ public class WFCAgainAgain : MonoBehaviour
     void Setup()
     {
         bruhTilemap.ClearAllTiles();
-        for (int x = 0; x < 10; x++)
+        for (int x = 0; x < Generator.world_heigth; x++)
         {
-            for (int y = 0; y < 10; y++)
+            for (int y = 0; y < Generator.world_width; y++)
             {
                 // int rand = Random.Range(0, bruhTiles.Count);
                 Vector3Int pos = new Vector3Int(x, y, -10);
