@@ -44,58 +44,52 @@ public class BibekWFCAgainAgain : MonoBehaviour
     void Setup()
     {
         bruhTilemap.ClearAllTiles();
-        for (int x = 0; x < 10; x++)
+        for (int x = 0; x < 100; x++)
         {
-            for (int y = 0; y < 10; y++)
+            for (int y = 0; y < 20; y++)
             {
                 // int rand = Random.Range(0, bruhTiles.Count);
                 Vector3Int pos = new Vector3Int(x, y, -10);
-                Debug.Log(gen.stringMap[y, x]);
-
                 
-                if (gen.stringMap[y, x] == "top")
+                if (gen.stringMap[x, y] == "top")
                 {
                     Debug.Log("valid top");
                     bruhTilemap.SetTile(pos, bruhTiles[0]);
                 }
-
-                else if (gen.stringMap[y, x] == "bottom")
+                else if (gen.stringMap[x, y] == "bottom")
                 {
                     Debug.Log("valid top");
                     bruhTilemap.SetTile(pos, bruhTiles[1]);
                 }
-
-                
-
-                else if (gen.stringMap[y, x] == "vertical")
+                else if (gen.stringMap[x, y] == "vertical")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[2]);
                 }
-                else if (gen.stringMap[y, x] == "horizontal")
+                else if (gen.stringMap[x, y] == "horizontal")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[3]);
                 }
-                else if (gen.stringMap[y, x] == "topRight")
+                else if (gen.stringMap[x, y] == "topRight")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[4]);
                 }
-                else if (gen.stringMap[y, x] == "topLeft")
+                else if (gen.stringMap[x, y] == "topLeft")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[5]);
                 }
-                else if (gen.stringMap[y, x] == "bottomRight")
+                else if (gen.stringMap[x, y] == "bottomRight")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[6]);
                 }
-                else if (gen.stringMap[y, x] == "bottomLeft")
+                else if (gen.stringMap[x, y] == "bottomLeft")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[7]);
                 }
-                else if (gen.stringMap[y, x] == "left")
+                else if (gen.stringMap[x, y] == "left")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[8]);
                 }
-                else if (gen.stringMap[y, x] == "right")
+                else if (gen.stringMap[x, y] == "right")
                 {
                     bruhTilemap.SetTile(pos, bruhTiles[9]);
                 }

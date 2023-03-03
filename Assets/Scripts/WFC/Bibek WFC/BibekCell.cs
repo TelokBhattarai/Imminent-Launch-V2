@@ -26,7 +26,7 @@ public class BibekCell
 
     public bool collapsed = false;
 
-    public List<string> options = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };  // Total of five options - 5 tiles
+    public List<string> options = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g};  // Total of five options - 5 tiles
 
     public BibekCell() { }
     public BibekCell(int x, int y) { this.x = x; this.y = y; }

@@ -10,13 +10,8 @@ public class BibekGenerator
     public Tilemap realTilemap;
     public List<Tile> realTiles;
     private Camera cam;
-    // Key names for each tile in StandardPalette
-    const string blankKey = "blankKey";
-    const string upKey = "upKey";
-    const string rightKey = "rightKey";
-    const string downKey = "downKey";
-    const string leftKey = "leftKey";
 
+    public System.Random rand = new  System.Random();
     /// <summary>
     /// NEw Tile set
     /// </summary>
@@ -40,19 +35,10 @@ public class BibekGenerator
     public string[,] stringMap = new string[0, 0];
 
     public BibekCell[,] grid;
-    public int[] gridValues;
-    public UnityEngine.Grid gameGrid;
-    public UnityEngine.Tilemaps.Tilemap tmap;
-
-    public UnityEngine.Tilemaps.Tile blankImg;
-    public UnityEngine.Tilemaps.Tile upImg;
-    public UnityEngine.Tilemaps.Tile rightImg;
-    public UnityEngine.Tilemaps.Tile downImg;
-    public UnityEngine.Tilemaps.Tile leftImg;
 
     Dictionary<string, BibekStandardCell> standardPallette = new Dictionary<string, BibekStandardCell>();
-    Dictionary<string, UnityEngine.Tilemaps.Tile> tilePair = new Dictionary<string, UnityEngine.Tilemaps.Tile>();
-    string[] tiles = { t, b, vh, hh, tl, tr, bl, br, l, r, g };
+   // Dictionary<string, UnityEngine.Tilemaps.Tile> tilePair = new Dictionary<string, UnityEngine.Tilemaps.Tile>();
+    //string[] tiles = { t, b, vh, hh, tl, tr, bl, br, l, r, g };
 
     bool DisplayDebug = false;
 
@@ -83,8 +69,9 @@ public class BibekGenerator
         BibekStandardCell groundSc = new BibekStandardCell(g);
 
         // Ground - Neighbors
+        // t, b, vh, hh, tl, tr, bl, br, l, r
         groundSc.upNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };
-        groundSc.rightNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r,g  };
+        groundSc.rightNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };
         groundSc.downNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };
         groundSc.leftNeighbors = new List<string>() { t, b, vh, hh, tl, tr, bl, br, l, r, g };
 
@@ -188,7 +175,7 @@ public class BibekGenerator
 
     private void SetupInitialGrid()
     {
-        // grid = new BibekCell[world_width, world_heigth];
+        grid = new BibekCell[world_width, world_heigth];
 
         for (int i = 0; i < world_width; i++)
         {
@@ -199,6 +186,13 @@ public class BibekGenerator
                 grid[i, j] = newCell;
             }
         }
+
+        
+        for(int i=0; i<1250; i++)
+        {
+            OverrideCollapse(ref grid[rand.Next(0, world_width), rand.Next(0, world_heigth)]);
+        }
+        
     }
 
 
@@ -252,6 +246,8 @@ public class BibekGenerator
 
         foreach (string curOpt in curRefCell.options)
         {
+            Debug.Log(curOpt);
+
             BibekStandardCell tmpBibekStandardCell = standardPallette[curOpt];
 
             if (direction == "up") combinedAllowedNeigbhors.AddRange(tmpBibekStandardCell.upNeighbors);
@@ -447,6 +443,15 @@ public class BibekGenerator
 
         return collapsedVal;
     }
+
+    private void OverrideCollapse(ref BibekCell cell)
+    {
+        cell.options.Clear();
+        cell.options.Add(g);
+        cell.collapsed = true;
+    }
+
+
 
 
     //////////////////////////////////////////////////////////////////////////////////////////
