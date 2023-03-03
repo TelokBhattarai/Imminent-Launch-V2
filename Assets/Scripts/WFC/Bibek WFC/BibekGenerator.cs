@@ -188,7 +188,7 @@ public class BibekGenerator
         }
 
         
-        for(int i=0; i<1250; i++)
+        for(int i=0; i<100; i++)
         {
             OverrideCollapse(ref grid[rand.Next(0, world_width), rand.Next(0, world_heigth)]);
         }

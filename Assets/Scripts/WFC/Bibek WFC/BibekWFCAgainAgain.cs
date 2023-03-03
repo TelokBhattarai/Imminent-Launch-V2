@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class BibekWFCAgainAgain : MonoBehaviour
 {
-    public BibekGenerator gen = new BibekGenerator(100, 20);
+    public BibekGenerator gen = new BibekGenerator(15, 15);
     public Tilemap bruhTilemap;
     public List<Tile> bruhTiles = new List<Tile>();
     public Tile t;
@@ -44,9 +44,9 @@ public class BibekWFCAgainAgain : MonoBehaviour
     void Setup()
     {
         bruhTilemap.ClearAllTiles();
-        for (int x = 0; x < 100; x++)
+        for (int x = 0; x < BibekGenerator.world_width; x++)
         {
-            for (int y = 0; y < 20; y++)
+            for (int y = 0; y < BibekGenerator.world_heigth; y++)
             {
                 // int rand = Random.Range(0, bruhTiles.Count);
                 Vector3Int pos = new Vector3Int(x, y, -10);
