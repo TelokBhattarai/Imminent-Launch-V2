@@ -206,7 +206,7 @@ MonoBehaviour:
   bl: {fileID: 11400000, guid: bfa97a2ca57da48e1947af1952582ea2, type: 2}
   l: {fileID: 11400000, guid: 4468847b5ed45489d9b003f720273384, type: 2}
   r: {fileID: 11400000, guid: 2a3ba48c967d84f2a8e77db03a2c8208, type: 2}
-  g: {fileID: 11400000, guid: 8584e2eff0d0042198119a1e1f78d185, type: 2}
+  g: {fileID: 11400000, guid: b047fde14a73d42e799666c669799b66, type: 2}
 --- !u!1 &212629965
 GameObject:
   m_ObjectHideFlags: 0
