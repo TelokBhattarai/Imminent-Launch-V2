@@ -261,6 +261,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: b
+      value: 
+      objectReference: {fileID: 11400000, guid: e809ef0bfefc64882b46c79b67362a73, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: l
+      value: 
+      objectReference: {fileID: 11400000, guid: 4468847b5ed45489d9b003f720273384, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: r
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a3ba48c967d84f2a8e77db03a2c8208, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: t
+      value: 
+      objectReference: {fileID: 11400000, guid: ab6e80157804c49738786ebe53805109, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: bl
+      value: 
+      objectReference: {fileID: 11400000, guid: bfa97a2ca57da48e1947af1952582ea2, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: br
+      value: 
+      objectReference: {fileID: 11400000, guid: 73b3cbdf0577e46e8a85f1132a262957, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: hh
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d24d2280edc24ac19d08ba80dd09831, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: tl
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e5e0691e9b5d445880556794958d8d4, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: tr
+      value: 
+      objectReference: {fileID: 11400000, guid: d6ca4d1577d9f429bb0ef6ddfd5d8dce, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f848f222f18547b5854fc28bd83fc64, type: 2}
     - target: {fileID: 8024638539590640984, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1807,8 +1847,8 @@ Transform:
   m_GameObject: {fileID: 494101862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1663485018}
   m_RootOrder: 2
@@ -4612,7 +4652,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21124077}
+  m_Offset: {x: 0, y: -0.11490297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4623,7 +4663,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.2105923, y: 13.533588}
+  m_Size: {x: 3.2562313, y: 7.0468435}
   m_EdgeRadius: 0
 --- !u!114 &1663485015
 MonoBehaviour:
@@ -6204,11 +6244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3563285354118310712, guid: effe81853963c4d139114a84630097e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.42
+      value: -2.444
       objectReference: {fileID: 0}
     - target: {fileID: 3563285354118310712, guid: effe81853963c4d139114a84630097e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8390196
+      value: 0.536
       objectReference: {fileID: 0}
     - target: {fileID: 3563285354118310712, guid: effe81853963c4d139114a84630097e8, type: 3}
       propertyPath: m_LocalPosition.z
