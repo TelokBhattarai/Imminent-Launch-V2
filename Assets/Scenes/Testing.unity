@@ -6087,7 +6087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de43ef9b8c5744e8daf2da7ceff5bb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyBouncingPrefab: {fileID: 969287247}
+  SlimePrefab: {fileID: 969287247}
+  OrcPrefab: {fileID: 2057649328}
   showEnemySpawn: {fileID: 0}
   showEnemyFlyBySpawn: {fileID: 0}
   showEnemyGrowerSpawn: {fileID: 0}

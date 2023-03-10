@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class EnemySpawn : MonoBehaviour
 {
     // EnemyPrefabs
-    public GameObject EnemyBouncingPrefab;
+    public GameObject SlimePrefab;
+    public GameObject OrcPrefab;
+    public static int spawnLimit = 3;
 
     //Show where spawn is prefab
     public GameObject showEnemySpawn;
@@ -54,7 +56,8 @@ public class EnemySpawn : MonoBehaviour
         }
 
         // Starts a coroutine function for spawning bouncing enemies and fly by enemy
-        StartCoroutine(SpawnBouncingEnemy());
+        StartCoroutine(Spawner(SlimePrefab));
+        StartCoroutine(Spawner(OrcPrefab));
         
     }
 
@@ -65,11 +68,11 @@ public class EnemySpawn : MonoBehaviour
     }
 
     // Spawn a Bouncing enemy
-    IEnumerator SpawnBouncingEnemy()
+    IEnumerator Spawner(GameObject gobj)
     {
         //Wait 3 to 5 seconds when game starts to spawn a ball
         yield return new WaitForSeconds(Random.Range(1, 3));
-        int i = Random.Range(1, 5);
+        int i = Random.Range(spawnLimit - 3, spawnLimit);
         while(i < 5)
          {
             //Calls the function to set random position
@@ -81,7 +84,7 @@ public class EnemySpawn : MonoBehaviour
             // Destroy(marker);
 
             // Spawn enemy
-            GameObject newEnemy = (GameObject)Instantiate(EnemyBouncingPrefab, spawnPoint, Quaternion.identity);
+            GameObject newEnemy = (GameObject)Instantiate(gobj, spawnPoint, Quaternion.identity);
 
             activeEnemies.Add(newEnemy);
             i++;
