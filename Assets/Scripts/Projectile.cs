@@ -23,17 +23,17 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(collision);
+        Debug.Log(other);
 
-        if (!collision.gameObject.CompareTag("Enemy"))
+        if (!other.gameObject.CompareTag("Enemy"))
             return;
 
-        EnemyScript enemy = collision.gameObject.GetComponentInChildren<EnemyScript>();
+        EnemyScript enemy = other.gameObject.GetComponentInChildren<EnemyScript>();
 
 
-        if(type == "long")
+        if (type == "long")
         {
             enemy.takeDamage(damage * WeaponManager.LongBowLevel);
         }
@@ -44,4 +44,6 @@ public class Projectile : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+   
 }

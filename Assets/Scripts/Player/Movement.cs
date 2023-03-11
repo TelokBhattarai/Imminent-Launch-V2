@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
 {
     public static Directions dir = Directions.LEFT;
 
+    public Transform shoot;
+
     public Rigidbody2D playerBody;
 
     float horizontal;
@@ -49,7 +51,7 @@ public class Movement : MonoBehaviour
 
     private void changeDirection(int angle, Directions direction)
     {
-        transform.localEulerAngles = new Vector3(0, 0, angle);
+        shoot.localEulerAngles = new Vector3(0, 0, angle);
         dir = direction;
     }
 }
