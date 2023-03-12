@@ -7,6 +7,9 @@ public class ShopManager : MonoBehaviour
 {
     public GameObject Panel;
 
+    public WeaponManager weaponManager;
+
+
     // Weapon levels
     public TextMeshProUGUI crossBow;
     public TextMeshProUGUI sword;
@@ -23,22 +26,22 @@ public class ShopManager : MonoBehaviour
 
     public void UpgradeLongBow()
     {
-        WeaponManager.upgrade("longbow");
+        weaponManager.upgrade("longbow");
     }
 
     public void UpgradeCrossBow()
     {
-        WeaponManager.upgrade("crossbow");
+        weaponManager.upgrade("crossbow");
     }
 
     public void UpgradeSword()
     {
-        WeaponManager.upgrade("sword");
+        weaponManager.upgrade("sword");
     }
 
     public void UpgradeArmor()
     {
-        WeaponManager.upgrade("armor");
+        weaponManager.upgrade("armor");
     }
 
     public void Update()

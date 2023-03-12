@@ -10,6 +10,13 @@ public class Projectile : MonoBehaviour
 
     public int damage;
 
+    public WeaponManager weaponManager;
+
+    private void Start()
+    {
+        Debug.Log(transform.parent);
+    }
+
     // Update is called once per frame
     void Update()
     {

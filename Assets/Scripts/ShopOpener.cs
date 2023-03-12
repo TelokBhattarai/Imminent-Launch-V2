@@ -8,8 +8,12 @@ public class ShopOpener : MonoBehaviour
 {
     public GameObject shopUI;
 
-    private void OnMouseDown()
+
+    private void Update()
     {
-        shopUI.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            shopUI.SetActive(true);
+        }
     }
 }

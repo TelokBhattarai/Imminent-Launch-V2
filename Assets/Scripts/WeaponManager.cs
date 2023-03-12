@@ -9,12 +9,15 @@ public class WeaponManager : MonoBehaviour
     public static int CrossBowLevel = 1;
     public static int LongBowLevel = 1;
 
-    public static int[] swordUpgradeCost = { 10, 20, 30 };
-    public static int[] longBowUpgradeTree = { 10, 20, 30 };
-    public static int[] crossBowUpgradeTree = { 10, 20, 30 };
-    public static int[] armorUpgradeTree = { 10, 20, 30 };
+    public int[] swordUpgradeCost = { 10, 20, 30 };
+    public int[] longBowUpgradeTree = { 10, 20, 30 };
+    public int[] crossBowUpgradeTree = { 10, 20, 30 };
+    public int[] armorUpgradeTree = { 10, 20, 30 };
 
-    public static void upgrade(string item, bool free = false)
+    public PlayerScript player;
+
+
+    public void upgrade(string item, bool free = false)
     {
         switch (item)
         {
@@ -28,18 +31,24 @@ public class WeaponManager : MonoBehaviour
                 upgradable(ref CrossBowLevel, crossBowUpgradeTree, free);
                 break;
             case "armor":
-                upgradable(ref ArmorLevel, armorUpgradeTree, free);
+                bool upgraded = upgradable(ref ArmorLevel, armorUpgradeTree, free);
+                if (upgraded)
+                {
+                    PlayerScript.maxHealth = (100 * ArmorLevel);
+                    PlayerScript.currHealth = PlayerScript.maxHealth;
+                    player.bar.setHealth(PlayerScript.currHealth);
+                }
                 break;
 
         }
     }
 
-    private static void upgradable(ref int level, int[] costTree, bool free)
+    private bool upgradable(ref int level, int[] costTree, bool free)
     {
         if (free)
         {
             level++;
-            return;
+            return true;
         }
 
 
@@ -47,8 +56,10 @@ public class WeaponManager : MonoBehaviour
         {
             PlayerScript.useCoins(costTree[level]);
             level++;
-            return;
+            return true;
         }
+
+        return false;
 
     }
 

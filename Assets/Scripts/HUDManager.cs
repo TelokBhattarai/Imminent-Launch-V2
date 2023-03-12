@@ -17,6 +17,8 @@ public class HUDManager : MonoBehaviour
     public TextMeshProUGUI sword;
     public TextMeshProUGUI longBow;
 
+    public WeaponManager weaponManager;
+
 
 
     // Update is called once per frame

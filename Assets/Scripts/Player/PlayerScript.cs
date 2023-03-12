@@ -12,9 +12,26 @@ public class PlayerScript : MonoBehaviour
     public static int currHealth = 100;
     public static bool hasPowerArmor = false;
 
+    public HealthBar bar;
 
-    public static int damagePlayer(int n)
+    private void Awake()
     {
+        timeRemaining = 40;
+        speed = 7;
+        coins = 10;
+        maxHealth = 100;
+        currHealth = 100;
+    }
+
+    private void Start()
+    {
+        bar.SetMaxHealth(maxHealth);
+    }
+
+    public int damagePlayer(int n)
+    {
+        bar.setHealth(currHealth - n);
+
         if (currHealth - n <= 0)
         {
             Debug.Log("Dead");
@@ -25,6 +42,7 @@ public class PlayerScript : MonoBehaviour
             currHealth -= n;
             return currHealth;
         }
+
     }
     
     public int healPlayer(int n)
