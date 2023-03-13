@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EnemyChecker : MonoBehaviour
 {
-    public int levelCt = 1;
+    public int levelCt;
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelCt = 1;
     }
 
     // Update is called once per frame
@@ -23,9 +23,9 @@ public class EnemyChecker : MonoBehaviour
                 EnemySpawn.spawnLimit += 2;
             }
         }
-        if (levelCt == 20)
+        if (levelCt == 20 || PlayerScript.currHealth == 0 || PlayerScript.timeRemaining == 0)
         {
-            // SceneManager.LoadScene(*insertendscene*);
+            SceneManager.LoadScene("Game Over");
         }
 
     }

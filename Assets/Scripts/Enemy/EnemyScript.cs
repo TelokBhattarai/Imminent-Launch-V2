@@ -12,7 +12,17 @@ public class EnemyScript : MonoBehaviour
     public int max_speed = 10;
     public int slowing_rad = 4;
     public bool seeking = true;
+    public GameObject coin;
+    public GameObject weaponUpgrade;
+    public GameObject megaArmor;
+    public GameObject key;
+    private Vector3 tempLoc;
+    private List<GameObject> powerups;
 
+    void Start()
+    {
+        powerups = new List<GameObject>() { coin, weaponUpgrade, megaArmor, key };
+    }
     private void seek()
     {
         Vector2 desired_vel = ((Vector2)target.transform.position - (Vector2)gameObject.transform.position);
@@ -47,6 +57,7 @@ public class EnemyScript : MonoBehaviour
 
     public void takeDamage(int n)
     {
+        audioPlayer.source.Play();
         health -= n;
     }
 
@@ -59,7 +70,10 @@ public class EnemyScript : MonoBehaviour
 
         if(health <= 0)
         {
+            //Instantiate(powerups[Random.Range(0, powerups.Count)]/*, gameObject.transform.parent*/);
+            tempLoc = gameObject.transform.parent.transform.position;
             Destroy(gameObject.transform.parent.gameObject);
+            Instantiate(powerups[Random.Range(0, powerups.Count)], tempLoc, Quaternion.identity);
         }
     }
 

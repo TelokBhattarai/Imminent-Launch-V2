@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     public static int maxHealth = 100;
     public static int currHealth = 100;
     public static bool hasPowerArmor = false;
+    public bool dead = false;
 
     public HealthBar bar;
 
@@ -34,8 +36,10 @@ public class PlayerScript : MonoBehaviour
 
         if (currHealth - n <= 0)
         {
+            dead = true;
             Debug.Log("Dead");
             return 0;
+            
         }
         else
         {
@@ -68,8 +72,12 @@ public class PlayerScript : MonoBehaviour
         else
         {
             Debug.Log("Time is out!");
+            SceneManager.LoadScene("Game Over");
         }
-
+        if (dead)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
 
         if (hasPowerArmor && currHealth <= 100)
             hasPowerArmor = false;

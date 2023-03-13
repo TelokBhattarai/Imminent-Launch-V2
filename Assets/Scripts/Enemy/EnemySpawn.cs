@@ -7,6 +7,7 @@ public class EnemySpawn : MonoBehaviour
     // EnemyPrefabs
     public GameObject SlimePrefab;
     public GameObject OrcPrefab;
+    
     public static int spawnLimit = 3;
 
     //Show where spawn is prefab
@@ -58,6 +59,7 @@ public class EnemySpawn : MonoBehaviour
         // Starts a coroutine function for spawning bouncing enemies and fly by enemy
         StartCoroutine(Spawner(SlimePrefab));
         StartCoroutine(Spawner(OrcPrefab));
+
         
     }
 

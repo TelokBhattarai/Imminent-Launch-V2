@@ -243,6 +243,10 @@ MonoBehaviour:
   max_speed: 3
   slowing_rad: 6
   seeking: 1
+  coin: {fileID: 294611999939143360, guid: 43773d146837d4077af5a722aa955bd1, type: 3}
+  weaponUpgrade: {fileID: 3854271775896222475, guid: 228a58b66c7fd45d396d881525828773, type: 3}
+  megaArmor: {fileID: 4232369667757321129, guid: ac5ad041af17a433bae7a49aa47470ce, type: 3}
+  key: {fileID: 6585964564057219053, guid: 9210d1c00fce34963920bff3de4233c3, type: 3}
 --- !u!58 &1582176400831704698
 CircleCollider2D:
   m_ObjectHideFlags: 0
