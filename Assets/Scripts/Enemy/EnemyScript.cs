@@ -16,7 +16,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject weaponUpgrade;
     public GameObject megaArmor;
     public GameObject key;
-    public static int enemiesLeft;
+    public static int enemiesLeft = 0;
     private Vector3 tempLoc;
     private List<GameObject> powerups;
 

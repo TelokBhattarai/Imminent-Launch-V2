@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static float timeRemaining = 6000;
+    public static float timeRemaining = 3000;
     public static float speed = 7;
     public static int coins = 1000;
     public static int keys = 0;
@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Awake()
     {
-        timeRemaining = 40;
+        timeRemaining = 60;
         speed = 7;
         coins = 10;
         maxHealth = 100;
