@@ -8,6 +8,10 @@ public class RandomWeaponUpgrade : MonoBehaviour
 
     public WeaponManager WeaponManager;
 
+    void Start()
+    {
+        WeaponManager = GameObject.FindWithTag("HUD").GetComponent<WeaponManager>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

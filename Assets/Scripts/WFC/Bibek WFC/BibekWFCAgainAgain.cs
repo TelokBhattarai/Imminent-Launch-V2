@@ -34,11 +34,16 @@ public class BibekWFCAgainAgain : MonoBehaviour
         bruhTiles.Add(r);
         bruhTiles.Add(g);
 
-        gen.PerformWFC();
-        Setup();
+        WFCRunner();
 
         bruhTilemap.SetTile(new Vector3Int(0,0,-10), bruhTiles[0]);
 
+    }
+
+    public void WFCRunner()
+    {
+        gen.PerformWFC();
+        Setup();
     }
 
     void Setup()

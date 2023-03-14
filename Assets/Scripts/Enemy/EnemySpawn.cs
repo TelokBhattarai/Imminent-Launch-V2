@@ -87,6 +87,7 @@ public class EnemySpawn : MonoBehaviour
 
             // Spawn enemy
             GameObject newEnemy = (GameObject)Instantiate(gobj, spawnPoint, Quaternion.identity);
+            EnemyScript.enemiesLeft++;
 
             activeEnemies.Add(newEnemy);
             i++;

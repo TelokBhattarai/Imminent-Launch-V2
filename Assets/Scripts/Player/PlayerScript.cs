@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static float timeRemaining = 3000;
+    public static float timeRemaining = 6000;
     public static float speed = 7;
     public static int coins = 1000;
     public static int keys = 0;
@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     public static int currHealth = 100;
     public static bool hasPowerArmor = false;
     public bool dead = false;
+    public BibekWFCAgainAgain wfc;
 
     public HealthBar bar;
 
@@ -77,6 +78,11 @@ public class PlayerScript : MonoBehaviour
         if (dead)
         {
             SceneManager.LoadScene("Game Over");
+        }
+        if (GameObject.FindWithTag("Enemy") == null)
+        {
+            wfc.WFCRunner();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (hasPowerArmor && currHealth <= 100)

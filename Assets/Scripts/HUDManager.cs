@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class HUDManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class HUDManager : MonoBehaviour
     public TextMeshProUGUI megaArmor;
     public TextMeshProUGUI key;
     public TextMeshProUGUI timer;
+    public Text enemies;
 
     // Weapon levels
     public TextMeshProUGUI crossBow;
@@ -31,6 +33,7 @@ public class HUDManager : MonoBehaviour
         longBow.text = "LongBow: " + WeaponManager.LongBowLevel;
         sword.text = "Sword: " + WeaponManager.SwordLevel;
         crossBow.text = "Crossbow: " + WeaponManager.CrossBowLevel;
+        enemies.text = "Enemies Left: " + EnemyScript.enemiesLeft;
 
     }
 }

@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject weaponUpgrade;
     public GameObject megaArmor;
     public GameObject key;
+    public static int enemiesLeft;
     private Vector3 tempLoc;
     private List<GameObject> powerups;
 
@@ -73,6 +74,7 @@ public class EnemyScript : MonoBehaviour
             //Instantiate(powerups[Random.Range(0, powerups.Count)]/*, gameObject.transform.parent*/);
             tempLoc = gameObject.transform.parent.transform.position;
             Destroy(gameObject.transform.parent.gameObject);
+            enemiesLeft--;
             Instantiate(powerups[Random.Range(0, powerups.Count)], tempLoc, Quaternion.identity);
         }
     }
