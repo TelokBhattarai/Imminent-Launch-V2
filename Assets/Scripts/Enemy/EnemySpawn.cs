@@ -4,36 +4,23 @@ using System.Collections.Generic;
 
 public class EnemySpawn : MonoBehaviour
 {
-    // EnemyPrefabs
+    
     public GameObject SlimePrefab;
     public GameObject OrcPrefab;
     
     public static int spawnLimit = 3;
 
-    //Show where spawn is prefab
-    public GameObject showEnemySpawn;
-    public GameObject showEnemyFlyBySpawn;
-    public GameObject showEnemyGrowerSpawn;
-    public GameObject showEnemyMineSpawn;
-
-
-    // Array of spawn points 
-    public Transform[] spawnPointsEnemyFollow;
-    public Transform[] spawnPointsEnemyExplode;
-    public Transform[] spawnPointsEnemyFlyBy;
-
-    // Borders
+    
     public Transform borderTop;
     public Transform borderBottom;
     public Transform borderLeft;
     public Transform borderRight;
 
 
-    //Used to put active enemies in a list
     public static List<GameObject> activeEnemies;
 
-    public Transform player;   // player transform
-    public float minDistance;  // minimum distance from spawnpoint to object
+    public Transform player;   
+    public float minDistance;  
 
     void Start()
     {
@@ -69,7 +56,6 @@ public class EnemySpawn : MonoBehaviour
         activeEnemies = new List<GameObject>();
     }
 
-    // Spawn a Bouncing enemy
     IEnumerator Spawner(GameObject gobj)
     {
         //Wait 3 to 5 seconds when game starts to spawn a ball
@@ -77,15 +63,9 @@ public class EnemySpawn : MonoBehaviour
         int i = Random.Range(spawnLimit - 3, spawnLimit);
         while(i < 5)
          {
-            //Calls the function to set random position
             Vector3 spawnPoint = RandomPointWithinBorders();
 
-            // Show spawn location for one second
-            // Object marker = Instantiate(showEnemySpawn, spawnPoint, Quaternion.identity);
-            // yield return new WaitForSeconds(1);
-            // Destroy(marker);
 
-            // Spawn enemy
             GameObject newEnemy = (GameObject)Instantiate(gobj, spawnPoint, Quaternion.identity);
             EnemyScript.enemiesLeft++;
 
