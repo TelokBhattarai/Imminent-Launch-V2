@@ -395,43 +395,47 @@ PrefabInstance:
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: b
       value: 
-      objectReference: {fileID: 11400000, guid: e809ef0bfefc64882b46c79b67362a73, type: 2}
+      objectReference: {fileID: 11400000, guid: 07b32fc86556c4b9c94ed99522fde48a, type: 2}
+    - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
+      propertyPath: g
+      value: 
+      objectReference: {fileID: 11400000, guid: f74fc4bdecbd64c8ea018899802282cf, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: l
       value: 
-      objectReference: {fileID: 11400000, guid: 4468847b5ed45489d9b003f720273384, type: 2}
+      objectReference: {fileID: 11400000, guid: 10e8fcff2f6944050b1be083955603dc, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: r
       value: 
-      objectReference: {fileID: 11400000, guid: 2a3ba48c967d84f2a8e77db03a2c8208, type: 2}
+      objectReference: {fileID: 11400000, guid: 03f8d4d6675234ef4bf3e742b5b8c36a, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: t
       value: 
-      objectReference: {fileID: 11400000, guid: ab6e80157804c49738786ebe53805109, type: 2}
+      objectReference: {fileID: 11400000, guid: 79826909b8c8d48afa9857971ddc6b50, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: bl
       value: 
-      objectReference: {fileID: 11400000, guid: bfa97a2ca57da48e1947af1952582ea2, type: 2}
+      objectReference: {fileID: 11400000, guid: 90f53202973f742a784d3ede149c451f, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: br
       value: 
-      objectReference: {fileID: 11400000, guid: 73b3cbdf0577e46e8a85f1132a262957, type: 2}
+      objectReference: {fileID: 11400000, guid: 97e1de67f40b142c79777893327c9c17, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: hh
       value: 
-      objectReference: {fileID: 11400000, guid: 0d24d2280edc24ac19d08ba80dd09831, type: 2}
+      objectReference: {fileID: 11400000, guid: 4ce56effd7c0a4ae5a43d6916a6d4266, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: tl
       value: 
-      objectReference: {fileID: 11400000, guid: 0e5e0691e9b5d445880556794958d8d4, type: 2}
+      objectReference: {fileID: 11400000, guid: cbbe7b542a8e84cfe821639d2f739f81, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: tr
       value: 
-      objectReference: {fileID: 11400000, guid: d6ca4d1577d9f429bb0ef6ddfd5d8dce, type: 2}
+      objectReference: {fileID: 11400000, guid: 74f0c830d7be3417dbd6d25b326bfb5b, type: 2}
     - target: {fileID: 8024638539590640981, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: vh
       value: 
-      objectReference: {fileID: 11400000, guid: 6f848f222f18547b5854fc28bd83fc64, type: 2}
+      objectReference: {fileID: 11400000, guid: a4d8a5bb2c47e47668eff65629b7a133, type: 2}
     - target: {fileID: 8024638539590640984, guid: 3b862415e6011407897f67dcba60f6be, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5325,13 +5329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlimePrefab: {fileID: 1582176399924511281, guid: 4c3b5b68da710416c90417868e102989, type: 3}
   OrcPrefab: {fileID: 3492779553321962454, guid: 6d133664e33f54c8d89ac858e77ed296, type: 3}
-  showEnemySpawn: {fileID: 0}
-  showEnemyFlyBySpawn: {fileID: 0}
-  showEnemyGrowerSpawn: {fileID: 0}
-  showEnemyMineSpawn: {fileID: 0}
-  spawnPointsEnemyFollow: []
-  spawnPointsEnemyExplode: []
-  spawnPointsEnemyFlyBy: []
   borderTop: {fileID: 556201023}
   borderBottom: {fileID: 1481060963}
   borderLeft: {fileID: 1016753782}
